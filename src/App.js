@@ -1,5 +1,8 @@
 import React from "react";
 
+import Menu from "./components/Menu";
+import { data } from "./data";
+
 export default function App() {
-  return <h1>It works!</h1>;
+  return <Menu title="Delicious Recipes" recipes={data} />;
 }
