@@ -1,5 +1,5 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 
 import Recipe from "./Recipe";
 
@@ -11,7 +11,12 @@ export default function Menu({ title, recipes }) {
       </header>
       <div className="recipes">
         {recipes.map((recipe, i) => (
-          <Recipe key={i} {...recipe} />
+          <Recipe
+            key={i}
+            name={recipe.name}
+            ingredients={recipe.ingredients}
+            steps={recipe.steps}
+          />
         ))}
       </div>
     </article>
@@ -19,6 +24,6 @@ export default function Menu({ title, recipes }) {
 }
 
 Menu.propTypes = {
-  title: PropTypes.string,
-  recipes: PropTypes.array,
+  title: PropTypes.string.isRequired,
+  recipes: PropTypes.arrayOf(Recipe.propTypes).isRequired,
 };

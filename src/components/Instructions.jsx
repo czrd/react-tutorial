@@ -1,5 +1,5 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 
 export default function Instructions({ title, steps }) {
   return (
@@ -13,6 +13,6 @@ export default function Instructions({ title, steps }) {
 }
 
 Instructions.propTypes = {
-  title: PropTypes.string,
-  steps: PropTypes.arrayOf(PropTypes.string),
+  title: PropTypes.string.isRequired,
+  steps: PropTypes.arrayOf(PropTypes.string).isRequired,
 };

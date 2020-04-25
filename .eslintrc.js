@@ -5,23 +5,25 @@ module.exports = {
     node: true,
   },
   extends: [
-    "plugin:react/recommended",
-    "plugin:jsx-a11y/recommended",
-    "plugin:import/recommended",
+    "airbnb",
     "plugin:prettier/recommended",
+    "plugin:import/recommended",
   ],
-  plugins: ["react-hooks"],
   globals: {
     Atomics: "readonly",
     SharedArrayBuffer: "readonly",
   },
+  plugins: ["import"],
   parserOptions: {
     ecmaVersion: 2018,
     sourceType: "module",
   },
   rules: {
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn",
+    "import/order": [
+      "error",
+      { "newlines-between": "always", alphabetize: { order: "asc" } },
+    ],
+    "react/no-array-index-key": "off",
   },
   settings: {
     react: {

@@ -1,8 +1,9 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 
-import Instructions from "./Instructions";
+import Ingredient from "./Ingredient";
 import IngredientList from "./IngredientsList";
+import Instructions from "./Instructions";
 
 export default function Recipe({ name, ingredients, steps }) {
   return (
@@ -15,7 +16,7 @@ export default function Recipe({ name, ingredients, steps }) {
 }
 
 Recipe.propTypes = {
-  name: PropTypes.string,
-  ingredients: PropTypes.array,
-  steps: PropTypes.array,
+  name: PropTypes.string.isRequired,
+  ingredients: PropTypes.arrayOf(Ingredient.propTypes).isRequired,
+  steps: PropTypes.arrayOf(Instructions.propTypes).isRequired,
 };
