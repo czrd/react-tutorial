@@ -11,7 +11,7 @@ export default function IngredientList({ list }) {
           key={i}
           amount={ingredient.amount}
           measurement={ingredient.measurement}
-          title={ingredient.title}
+          name={ingredient.name}
         />
       ))}
     </ul>
@@ -19,5 +19,5 @@ export default function IngredientList({ list }) {
 }
 
 IngredientList.propTypes = {
-  list: PropTypes.arrayOf(Ingredient.propTypes).isRequired,
+  list: PropTypes.arrayOf(PropTypes.shape(Ingredient.propTypes)).isRequired,
 };

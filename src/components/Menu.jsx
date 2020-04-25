@@ -25,5 +25,5 @@ export default function Menu({ title, recipes }) {
 
 Menu.propTypes = {
   title: PropTypes.string.isRequired,
-  recipes: PropTypes.arrayOf(Recipe.propTypes).isRequired,
+  recipes: PropTypes.arrayOf(PropTypes.shape(Recipe.propTypes)).isRequired,
 };

@@ -17,6 +17,7 @@ export default function Recipe({ name, ingredients, steps }) {
 
 Recipe.propTypes = {
   name: PropTypes.string.isRequired,
-  ingredients: PropTypes.arrayOf(Ingredient.propTypes).isRequired,
-  steps: PropTypes.arrayOf(Instructions.propTypes).isRequired,
+  ingredients: PropTypes.arrayOf(PropTypes.shape(Ingredient.propTypes))
+    .isRequired,
+  steps: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
